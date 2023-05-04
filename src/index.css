@@ -1,0 +1,33 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  position: relative;
+}
+
+.btn {
+  border: 1px solid;
+  padding: .6rem 1rem;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3em;
+}
+
+.empty {
+  height: 1px;
+  width: 200px;
+  background: teal;
+}
