@@ -4,19 +4,20 @@ const drawerWidth = 240
 export default makeStyles((theme) => ({
     toolbar: {
         height: '70%',
-        backgroundColor: 'teal',
+        backgroundColor: 'gray',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
+        cursor: 'pointer',
         [theme.breakpoints.down('sm')] : {
             marginLeft: 0,
             flexWrap: 'wrap'
         },
 
     },
-    navList:{
+    navList :{
         display: 'flex',
-        gap: '3em'
+        gap: '3em',
     },
     drawer: {
         [theme.breakpoints.up('sm')] : {
@@ -27,7 +28,8 @@ export default makeStyles((theme) => ({
         }
     },
     linkBtn: {
-        // margin: theme.spacing(2),
+        marginLeft: theme.spacing(2),
+        textAlign: 'center',
 
         '&hover': {
             color: 'gray !important',

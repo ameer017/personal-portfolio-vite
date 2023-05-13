@@ -1,6 +1,6 @@
 .social {
     position: fixed;
-    right: -10em;
+    right: -8em;
     bottom: 10em;
     rotate: 90deg;
     
@@ -28,27 +28,26 @@
         .socialBtn:hover {
             outline-offset: 3px;
             outline: 1px dashed brown;
+            background-color: #d1d1d1;
+            color: white;
         }
-    
-        .socialBtn:hover:nth-child(1) {
-            background-color: #f6f3f3;  
-             
-        }
-    
-        .socialBtn:hover:nth-child(2) {
-            background-color: #43598f;   
-        }
-    
-        .socialBtn:hover:nth-child(3) {
-            background-color: #c4302b;
-        }
-    
-        .socialBtn:hover:nth-child(4) {
-            background-color: #0072b1;
-        }
-    
-        .socialBtn:hover:nth-child(5) {
-            background-color: #267126;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .social{
+        // display: none;
+        position: absolute;
+        rotate: 360deg;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        .socialBtns {
+
+            .socialBtn{
+                rotate: 360deg;
+            }
         }
     }
 }

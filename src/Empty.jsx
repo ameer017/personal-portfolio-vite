@@ -1,19 +1,15 @@
 import React from 'react'
-import { Box, CircularProgress } from '@mui/material'
+import './Empty.scss'
 
 
 const Empty = () => {
   return (
-    <div>
-        <Box display="flex" justifyContent="center" 
-      alignItems='center' position='absolute' 
-      top='100%' left='50%'
-      >
-          <CircularProgress size='1rem'/>
-          <CircularProgress size='1rem'/>
-          <CircularProgress size='1rem'/>
-          <CircularProgress size='1rem'/>
-      </Box>
+    <div className='soundWave'>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
   )
 }

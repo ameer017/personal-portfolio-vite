@@ -2,32 +2,43 @@ import React from 'react'
 import './Social.scss'
 import {ImFacebook, ImTwitter, ImWhatsapp} from 'react-icons/im'
 import {BsInstagram} from 'react-icons/bs'
-import {AiOutlineMail} from 'react-icons/ai'
 
+const items = [
+  
+  {
+    icon: <ImFacebook />,
+    link: 'https://web.facebook.com/akin.raji'
+  },
+  {
+    icon: <BsInstagram />,
+    link: 'https://www.instagram.com/a.rajiabdullahi'
+  },
+  {
+    icon: <ImTwitter />,
+    link: 'https://twitter.com/alAmeer170'
+  },
+  {
+    icon: <ImWhatsapp />,
+    link: 'https://wa.link/jyty4h'
+  },
+  
+]
 export default function Social() {
+
+
   return (
-    <div className='social'>
-        <ul className="socialBtns">
-            <li className='socialBtn'>
-              <a href="mailto:rajiabdullahi907@gmail.com"><AiOutlineMail /></a>
-            </li>
-            <li className='socialBtn'>
-              <a href="https://web.facebook.com/akin.raji"><ImFacebook /></a>
-            </li>
-
-            <li className='socialBtn'>
-              <a href="https://www.instagram.com/a.rajiabdullahi/"><BsInstagram/></a>
-            </li>
-
-            <li className='socialBtn'>
-              <a href="https://twitter.com/alAmeer170"><ImTwitter /></a>
-            </li>
-
-            <li className='socialBtn'>
-              <a href="https://wa.link/jyty4h"><ImWhatsapp /></a>
-            </li>
-        </ul>
-
-    </div>
+    <>
+        <div className='social'>
+          <ul className="socialBtns">
+            {items.map(({icon, link}) => (
+              <a href={link}>
+                <li className='socialBtn'>{icon}</li>
+              </a>
+            ))}
+          </ul>
+        </div>
+      
+    </>
+    
   )
 }

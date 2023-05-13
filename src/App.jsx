@@ -1,14 +1,34 @@
-import { useEffect, useState } from 'react'
 import './App.css'
-import { Box, CircularProgress, Typography } from '@mui/material'
-import {Navbar, Empty} from '../src/index'
+import {Navbar, Empty, Socials, HeroSection, Progress, About, Projects, Services, Contact, Footer} from '../src/index'
+import React, {useState, useEffect} from 'react'
 
 
 function App() {
+  const [isLoading, setisLoading] = useState(true)
+
+  useEffect(() => {
+      setTimeout(() => {
+        setisLoading(false)
+      }, 5000)
+  }, [])
 
   return (
     <div className="App">
-      <Navbar />  
+    {isLoading ? (
+      <Empty />
+    ) : (
+      <>
+        <Navbar />  
+        <Socials />
+        <HeroSection />
+        <About />
+        <Services />
+        <Projects />
+        {/* <Progress /> */}
+        <Contact />
+        <Footer />
+      </>      
+    )}
     </div>
   )
 }

@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
-import { AppBar, IconButton, Toolbar, Drawer, Button, Avatar, useMediaQuery, Typography , List, ListItem, ListItemText, ListSubheader, Icon} from '@mui/material'
-import { Menu, AccountCircle, Brightness4, Brightness7 } from '@mui/icons-material'
-import { Link } from 'react-router-dom';
+import { AppBar, IconButton, Toolbar, Drawer,  Button, useMediaQuery, Typography , List, ListItemText} from '@mui/material'
+import { Menu} from '@mui/icons-material'
 import useStyles from './styleNav'
-import { useTheme } from '@mui/material/styles';
 import {DiCoda} from 'react-icons/di'
+import { Socials } from '..'
 
-const lists = [ 'About', 'Services', 'Projects', 'Stacks', 'Contact']
+const lists = [ 
+    {tag: 'About', id: '#About'}, 
+    {tag: 'Services', id: '#Services'}, 
+    {tag: 'Projects', id: '#Projects'}, 
+    // {tag: 'Stacks', id: '#Stacks'}, 
+    {tag: 'Contact', id: '#Contact'}]
 const drawerWidth = 150
 const Navbar = () => {
     const isMobile = useMediaQuery('(max-width: 600px)')
@@ -14,8 +18,6 @@ const Navbar = () => {
     const [mobileOpen, setMobileOpen] = useState(false)
 
     const classes = useStyles()
-    const theme = useTheme()
-    const isAuthenticated = 'true';
 
   return (
     <>
@@ -25,7 +27,6 @@ const Navbar = () => {
                     <DiCoda fontSize={40}/>
                 </Typography>
 
-                
                 {isMobile ? (
                     <IconButton
                         color='inherit'
@@ -39,12 +40,17 @@ const Navbar = () => {
                     </IconButton>
                     
                 ) :
+                    
                     <List className={classes.navList}>
-                        {lists.map((list , i) => (
-                            <ListItemText primary={list} key={i}/>
+                        {lists.map(({tag, id}) => (
+                        <a href={id}>
+
+                            <ListItemText primary={tag}/>   
+                        </a>
                         ))}
+
                         <Button variant='outlined' 
-                        color="success"
+                        color="primary"
                         href='https://drive.google.com/file/d/1uwJQbzOR9ynomv7nvN4f-xkTzqN372Y5/view?usp=share_link'    
                     >Resumé</Button>
                     </List>   
@@ -67,15 +73,13 @@ const Navbar = () => {
                     '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
                     }}
                     >
-                        <List className={classes.linkBtn}>
-                        {lists.map((list , i) => (
-                            <ListItemText primary={list} key={i}/>
-                        ))}
                         <Button variant='outlined'
-                        color="success" 
-                            href='https://drive.google.com/file/d/1uwJQbzOR9ynomv7nvN4f-xkTzqN372Y5/view?usp=share_link'    
-                            >Resumé</Button>
-                        </List>
+                            color="success" 
+                            href='https://drive.google.com/file/d/1uwJQbzOR9ynomv7nvN4f-xkTzqN372Y5/view?usp=share_link'   >
+                            Resumé
+                        </Button>
+                            
+
                     </Drawer>
                 ) : (
                     <Drawer></Drawer>
